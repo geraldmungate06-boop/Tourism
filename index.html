@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSUAS | Interactive University Tourism & Heritage</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ========== PRELOADER ========== -->
+<div id="preloader">
+  <div class="loader-logo">
+    <div class="loader-ring"></div>
+    <img src="images/logo.svg" alt="MSUAS" id="loader-img" />
+    <p>MSUAS Heritage Explorer</p>
+  </div>
+</div>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo-wrapper">
+        <div class="nav-logo-icon"><i class="fas fa-university"></i></div>
+        <div>
+          <span class="nav-title">MSUAS</span>
+          <span class="nav-subtitle">Heritage Explorer</span>
+        </div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="heritage.html"><i class="fas fa-landmark"></i> Heritage</a></li>
+      <li><a href="campus.html"><i class="fas fa-map-marked-alt"></i> Campus Tour</a></li>
+      <li><a href="events.html"><i class="fas fa-calendar-star"></i> Events</a></li>
+      <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-search-toggle" id="searchToggle" aria-label="Search"><i class="fas fa-search"></i></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <!-- Search Bar -->
+  <div class="search-bar" id="searchBar">
+    <input type="text" id="searchInput" placeholder="Search heritage sites, events, departments..." />
+    <button id="searchBtn"><i class="fas fa-search"></i></button>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero" id="hero">
+  <div class="hero-slider" id="heroSlider">
+    <div class="hero-slide active" style="background-image: url('images/campus-background.jpg')">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fas fa-star"></i> Discover MSUAS</span>
+        <h1>Explore Our Rich <br/><span class="highlight">Heritage & Culture</span></h1>
+        <p>Manicaland State University of Applied Sciences — where innovation meets tradition. Discover our campus, history, and vibrant student life.</p>
+        <div class="hero-btns">
+          <a href="campus.html" class="btn btn-primary"><i class="fas fa-map-marked-alt"></i> Start Campus Tour</a>
+          <a href="heritage.html" class="btn btn-outline"><i class="fas fa-landmark"></i> Explore Heritage</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num" data-target="5000">0</span><span>+ Students</span></div>
+          <div class="stat"><span class="stat-num" data-target="20">0</span><span>+ Departments</span></div>
+          <div class="stat"><span class="stat-num" data-target="15">0</span><span>+ Heritage Sites</span></div>
+          <div class="stat"><span class="stat-num" data-target="40">0</span><span>+ Years Legacy</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('images/campus-background.jpg')">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fas fa-camera"></i> Virtual Tour</span>
+        <h1>Take a <span class="highlight">360° Virtual</span><br/>Campus Walk</h1>
+        <p>Experience MSUAS from anywhere in the world with our immersive virtual campus tour featuring all key landmarks.</p>
+        <div class="hero-btns">
+          <a href="campus.html#virtual" class="btn btn-primary"><i class="fas fa-vr-cardboard"></i> Virtual Tour</a>
+          <a href="gallery.html" class="btn btn-outline"><i class="fas fa-images"></i> View Gallery</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('images/campus-background.jpg')">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fas fa-calendar"></i> Upcoming Events</span>
+        <h1>Join Our <span class="highlight">Cultural</span><br/>Celebrations</h1>
+        <p>Participate in our annual heritage festivals, academic expos, and cultural events that celebrate Manicaland's rich traditions.</p>
+        <div class="hero-btns">
+          <a href="events.html" class="btn btn-primary"><i class="fas fa-ticket-alt"></i> View Events</a>
+          <a href="about.html" class="btn btn-outline"><i class="fas fa-info-circle"></i> Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Slider Controls -->
+  <button class="slider-btn prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="slider-btn next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="slider-dots" id="sliderDots"></div>
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <span>Scroll Down</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ========== QUICK ACCESS CARDS ========== -->
+<section class="quick-access section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Quick Access</span>
+      <h2>What Would You Like to Explore?</h2>
+    </div>
+    <div class="quick-grid">
+      <a href="heritage.html" class="quick-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="quick-icon" style="background: linear-gradient(135deg,#2d7d32,#1b5e20)"><i class="fas fa-monument"></i></div>
+        <h3>Heritage Sites</h3>
+        <p>Explore MSUAS historical landmarks and founding stories</p>
+        <span class="quick-link">Explore <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="campus.html" class="quick-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="quick-icon" style="background: linear-gradient(135deg,#b8860b,#8b6914)"><i class="fas fa-map-marked-alt"></i></div>
+        <h3>Interactive Map</h3>
+        <p>Navigate every building, facility and landmark on campus</p>
+        <span class="quick-link">Explore <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="events.html" class="quick-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="quick-icon" style="background: linear-gradient(135deg,#1b5e20,#388e3c)"><i class="fas fa-calendar-alt"></i></div>
+        <h3>Events Calendar</h3>
+        <p>Find upcoming cultural events, open days and festivals</p>
+        <span class="quick-link">Explore <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="gallery.html" class="quick-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="quick-icon" style="background: linear-gradient(135deg,#c8a000,#b8860b)"><i class="fas fa-images"></i></div>
+        <h3>Photo Gallery</h3>
+        <p>Browse stunning images of campus life and Manicaland</p>
+        <span class="quick-link">Explore <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="campus.html#facilities" class="quick-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="quick-icon" style="background: linear-gradient(135deg,#4caf50,#2e7d32)"><i class="fas fa-building"></i></div>
+        <h3>Facilities</h3>
+        <p>Discover labs, libraries, sports and accommodation</p>
+        <span class="quick-link">Explore <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="about.html#departments" class="quick-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="quick-icon" style="background: linear-gradient(135deg,#8b6914,#c8a000)"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Departments</h3>
+        <p>Learn about all academic faculties and programmes</p>
+        <span class="quick-link">Explore <i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURED HERITAGE ========== -->
+<section class="featured section" style="background:rgba(255,255,255,0.82);">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Heritage Spotlight</span>
+      <h2>Featured Heritage Sites</h2>
+      <p>Discover the most iconic landmarks that define MSUAS identity and Manicaland heritage</p>
+    </div>
+    <div class="featured-grid">
+      <article class="heritage-card" data-aos="fade-right">
+        <div class="card-img-wrap">
+          <div class="card-img" style="background: linear-gradient(135deg,#1b5e20,#4caf50); display:flex;align-items:center;justify-content:center;height:220px;">
+            <i class="fas fa-university" style="font-size:5rem;color:rgba(255,215,0,0.8)"></i>
+          </div>
+          <div class="card-badge">Founding Site</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta"><i class="fas fa-map-pin"></i> Main Campus, Mutare</div>
+          <h3>The Founders' Hall</h3>
+          <p>The original administration building that witnessed the birth of MSUAS. A testament to the vision of providing quality applied sciences education in Manicaland.</p>
+          <div class="card-tags"><span>History</span><span>Architecture</span><span>Must-Visit</span></div>
+          <a href="heritage.html#founders" class="btn btn-sm">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="heritage-card" data-aos="fade-up">
+        <div class="card-img-wrap">
+          <div class="card-img" style="background: linear-gradient(135deg,#b8860b,#c8a000); display:flex;align-items:center;justify-content:center;height:220px;">
+            <i class="fas fa-tree" style="font-size:5rem;color:rgba(255,255,255,0.8)"></i>
+          </div>
+          <div class="card-badge gold-badge">Natural Heritage</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta"><i class="fas fa-map-pin"></i> Eastern Highlands</div>
+          <h3>Manicaland Nature Trail</h3>
+          <p>A curated trail connecting MSUAS to Manicaland's breathtaking Eastern Highlands. Explore indigenous flora, fauna and the region's natural wonders.</p>
+          <div class="card-tags"><span>Nature</span><span>Ecology</span><span>Tourism</span></div>
+          <a href="heritage.html#nature" class="btn btn-sm">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="heritage-card" data-aos="fade-left">
+        <div class="card-img-wrap">
+          <div class="card-img" style="background: linear-gradient(135deg,#2d7d32,#8b6914); display:flex;align-items:center;justify-content:center;height:220px;">
+            <i class="fas fa-book-open" style="font-size:5rem;color:rgba(255,215,0,0.8)"></i>
+          </div>
+          <div class="card-badge">Cultural Center</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta"><i class="fas fa-map-pin"></i> Campus Library Wing</div>
+          <h3>Heritage Library Archive</h3>
+          <p>Home to rare manuscripts, historical records, and Manicaland cultural artifacts. A living museum of the region's intellectual and cultural legacy.</p>
+          <div class="card-tags"><span>Culture</span><span>Research</span><span>Archive</span></div>
+          <a href="heritage.html#library" class="btn btn-sm">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+    <div class="text-center" style="margin-top:2rem;" data-aos="fade-up">
+      <a href="heritage.html" class="btn btn-primary"><i class="fas fa-landmark"></i> View All Heritage Sites</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INTERACTIVE MAP PREVIEW ========== -->
+<section class="map-preview section">
+  <div class="container">
+    <div class="map-preview-inner">
+      <div class="map-text" data-aos="fade-right">
+        <span class="section-tag">Interactive Experience</span>
+        <h2>Navigate Our Campus Like Never Before</h2>
+        <p>Our interactive campus map lets you explore every corner of MSUAS. Click on buildings to get information about facilities, opening hours, and services.</p>
+        <ul class="map-features">
+          <li><i class="fas fa-check-circle"></i> All 30+ campus buildings mapped</li>
+          <li><i class="fas fa-check-circle"></i> Real-time facility availability</li>
+          <li><i class="fas fa-check-circle"></i> Audio & visual heritage guides</li>
+          <li><i class="fas fa-check-circle"></i> Accessibility-friendly routes</li>
+          <li><i class="fas fa-check-circle"></i> Student services locator</li>
+        </ul>
+        <a href="campus.html" class="btn btn-primary"><i class="fas fa-map"></i> Open Interactive Map</a>
+      </div>
+      <div class="map-visual" data-aos="fade-left">
+        <div class="campus-map-preview" id="campusMapPreview">
+          <div class="map-bg">
+            <div class="map-building" style="top:10%;left:10%;" title="Administration" data-name="Admin Block"><i class="fas fa-university"></i><span>Admin</span></div>
+            <div class="map-building" style="top:10%;left:45%;" title="Library" data-name="Library"><i class="fas fa-book"></i><span>Library</span></div>
+            <div class="map-building" style="top:10%;left:75%;" title="Science Labs" data-name="Sci Labs"><i class="fas fa-flask"></i><span>Labs</span></div>
+            <div class="map-building" style="top:42%;left:20%;" title="Sports Complex" data-name="Sports"><i class="fas fa-running"></i><span>Sports</span></div>
+            <div class="map-building active" style="top:42%;left:50%;" title="Heritage Center" data-name="Heritage"><i class="fas fa-landmark"></i><span>Heritage</span></div>
+            <div class="map-building" style="top:42%;left:78%;" title="Student Center" data-name="Students"><i class="fas fa-users"></i><span>Students</span></div>
+            <div class="map-building" style="top:72%;left:10%;" title="Hostels" data-name="Hostels"><i class="fas fa-bed"></i><span>Hostels</span></div>
+            <div class="map-building" style="top:72%;left:45%;" title="Cafeteria" data-name="Cafeteria"><i class="fas fa-utensils"></i><span>Cafe</span></div>
+            <div class="map-building" style="top:72%;left:78%;" title="Car Park" data-name="Parking"><i class="fas fa-parking"></i><span>Parking</span></div>
+            <div class="map-path h" style="top:28%;left:5%;width:90%;"></div>
+            <div class="map-path h" style="top:60%;left:5%;width:90%;"></div>
+            <div class="map-path v" style="top:5%;left:35%;height:90%;"></div>
+            <div class="map-path v" style="top:5%;left:65%;height:90%;"></div>
+            <div class="map-tooltip" id="mapTooltip"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== UPCOMING EVENTS ========== -->
+<section class="events-preview section" style="background:rgba(255,255,255,0.82);">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">What's On</span>
+      <h2>Upcoming Events & Festivals</h2>
+      <p>Don't miss out on our vibrant campus cultural calendar</p>
+    </div>
+    <div class="events-grid" id="eventsGrid">
+      <!-- Populated by JS -->
+    </div>
+    <div class="text-center" data-aos="fade-up">
+      <a href="events.html" class="btn btn-primary"><i class="fas fa-calendar-alt"></i> Full Events Calendar</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VIDEO SECTION ========== -->
+<section class="video-section section">
+  <div class="container">
+    <div class="video-inner">
+      <div class="video-text" data-aos="fade-right">
+        <span class="section-tag">Watch & Discover</span>
+        <h2>Experience MSUAS Through Our Eyes</h2>
+        <p>Watch our campus tour video and heritage documentary to get a feel for life at Manicaland State University of Applied Sciences.</p>
+        <div class="video-tabs">
+          <button class="vtab active" data-vid="intro">Campus Tour</button>
+          <button class="vtab" data-vid="heritage">Heritage Doc</button>
+          <button class="vtab" data-vid="life">Student Life</button>
+        </div>
+        <div class="video-info" id="videoInfo">
+          <h4>Welcome to MSUAS</h4>
+          <p>A 3-minute tour of our beautiful campus in the Eastern Highlands of Zimbabwe.</p>
+        </div>
+      </div>
+      <div class="video-player-wrap" data-aos="fade-left">
+        <div class="video-player" id="videoPlayer">
+          <div class="video-placeholder" id="videoPlaceholder">
+            <div class="play-btn" id="playBtn"><i class="fas fa-play"></i></div>
+            <div class="video-label">MSUAS Campus Tour</div>
+            <!-- In production, replace with actual <video> element -->
+            <video id="mainVideo" controls style="display:none;width:100%;border-radius:12px;">
+              <source src="images/campus-tour.mp4" type="video/mp4" />
+              Your browser does not support the video element.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials section" style="background:linear-gradient(135deg,rgba(27,94,32,0.78),rgba(45,125,50,0.68)),url('images/campus-background.jpg') center/cover fixed;">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag" style="background:rgba(255,215,0,0.2);color:#ffd700;">What They Say</span>
+      <h2 style="color:#fff;">Voices of MSUAS</h2>
+    </div>
+    <div class="testimonials-slider" id="testimonialsSlider">
+      <div class="testimonial-slide active">
+        <blockquote>"MSUAS has given me more than a degree — it's connected me to a rich cultural heritage that I'm proud to be part of. The campus itself is a living museum."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar"><i class="fas fa-user-graduate"></i></div>
+          <div><strong>Chiedza Moyo</strong><span>BSc Applied Sciences, 2024</span></div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <blockquote>"The interactive campus tour feature helped me navigate my first week perfectly. Every facility is clearly marked and accessible — an incredible student tool!"</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar"><i class="fas fa-user-graduate"></i></div>
+          <div><strong>Takudzwa Mhuru</strong><span>BCom Business Studies, 2025</span></div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <blockquote>"As a visitor from Harare, the MSUAS Heritage Explorer app made my open day experience unforgettable. I got to know every corner of the campus before I even enrolled."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar"><i class="fas fa-user"></i></div>
+          <div><strong>Rudo Zvobgo</strong><span>Prospective Student, 2026</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-dots" id="testimonialDots"></div>
+  </div>
+</section>
+
+<!-- ========== NEWSLETTER ========== -->
+<section class="newsletter section">
+  <div class="container">
+    <div class="newsletter-inner" data-aos="zoom-in">
+      <div class="newsletter-icon"><i class="fas fa-envelope-open-text"></i></div>
+      <h2>Stay Updated with MSUAS Heritage & Events</h2>
+      <p>Subscribe to receive news about upcoming cultural events, heritage tours, and campus highlights.</p>
+      <form class="newsletter-form" id="newsletterForm" novalidate>
+        <div class="form-group">
+          <input type="text" name="fname" placeholder="Your Full Name" required />
+          <input type="email" name="email" placeholder="Your Email Address" required />
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Subscribe</button>
+        </div>
+        <p class="form-msg" id="newsletterMsg"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <i class="fas fa-university"></i>
+            <div><span>MSUAS</span><small>Heritage Explorer</small></div>
+          </div>
+          <p>Manicaland State University of Applied Sciences — connecting students and visitors to our rich academic heritage and vibrant campus culture.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="heritage.html"><i class="fas fa-chevron-right"></i> Heritage Sites</a></li>
+            <li><a href="campus.html"><i class="fas fa-chevron-right"></i> Campus Tour</a></li>
+            <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+            <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About MSUAS</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Student Services</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Library</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Accommodation</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Student Portal</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Academic Calendar</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Alumni Network</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Manicaland, Mutare, Zimbabwe</li>
+            <li><i class="fas fa-phone"></i> +263 20 2 60036</li>
+            <li><i class="fas fa-envelope"></i> info@msuas.ac.zw</li>
+            <li><i class="fas fa-globe"></i> www.msuas.ac.zw</li>
+            <li><i class="fas fa-clock"></i> Mon-Fri: 8AM - 5PM CAT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 Manicaland State University of Applied Sciences. All Rights Reserved.</p>
+      <p>DSI236 Practical Assignment | Group of Five</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <i class="fas fa-cookie-bite"></i>
+  <p>We use cookies to enhance your experience on the MSUAS Heritage Explorer. <a href="#">Learn more</a></p>
+  <button id="cookieAccept" class="btn btn-sm">Accept</button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

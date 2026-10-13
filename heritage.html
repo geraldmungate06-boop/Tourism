@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heritage Sites | MSUAS Heritage Explorer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="preloader"><div class="loader-logo"><div class="loader-ring"></div><p>MSUAS Heritage Explorer</p></div></div>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo-wrapper">
+        <div class="nav-logo-icon"><i class="fas fa-university"></i></div>
+        <div><span class="nav-title">MSUAS</span><span class="nav-subtitle">Heritage Explorer</span></div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="heritage.html" class="active"><i class="fas fa-landmark"></i> Heritage</a></li>
+      <li><a href="campus.html"><i class="fas fa-map-marked-alt"></i> Campus Tour</a></li>
+      <li><a href="events.html"><i class="fas fa-calendar-star"></i> Events</a></li>
+      <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <input type="text" id="searchInput" placeholder="Search heritage sites, events..." />
+    <button id="searchBtn"><i class="fas fa-search"></i></button>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Heritage Sites</span></div>
+    <h1><i class="fas fa-landmark" style="color:var(--gold-bright)"></i> Heritage Sites</h1>
+    <p>Explore the historical landmarks and cultural treasures of MSUAS and Manicaland</p>
+  </div>
+</div>
+
+<!-- FILTER + GRID -->
+<section class="section">
+  <div class="container">
+    <div class="heritage-filter" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">All Sites</button>
+      <button class="filter-btn" data-filter="history">Historical</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="culture">Cultural</button>
+      <button class="filter-btn" data-filter="academic">Academic</button>
+    </div>
+    <div class="heritage-grid" id="heritageGrid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section" style="background:rgba(255,255,255,0.82);" id="timeline">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Our Journey</span>
+      <h2>MSUAS Historical Timeline</h2>
+      <p>Tracing the growth of Manicaland State University of Applied Sciences</p>
+    </div>
+    <div class="heritage-timeline" id="heritageTimeline"></div>
+  </div>
+</section>
+
+<!-- AUDIO GUIDE -->
+<section class="section" style="background:linear-gradient(135deg,rgba(27,94,32,0.78),rgba(45,125,50,0.68)),url('images/campus-background.jpg') center/cover fixed;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" style="background:rgba(255,215,0,0.2);color:var(--gold-bright)">Audio Experience</span>
+      <h2 style="color:#fff;">Heritage Audio Guide</h2>
+      <p style="color:rgba(255,255,255,0.8)">Listen to guided audio tours of our key heritage sites</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;" id="audioGuides"></div>
+  </div>
+</section>
+
+<!-- SITE MODAL -->
+<div class="site-modal" id="siteModal">
+  <div class="site-modal-inner">
+    <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+    <div class="modal-header" id="modalHeader"></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+<footer class="footer">
+  <div class="footer-bottom"><div class="container">
+    <p>&copy; 2025 Manicaland State University of Applied Sciences. All Rights Reserved.</p>
+    <p>DSI236 Practical Assignment | Group of Five</p>
+  </div></div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/heritage.js"></script>
+</body>
+</html>

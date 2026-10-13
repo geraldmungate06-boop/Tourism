@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events | MSUAS Heritage Explorer</title>
+  <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/pages.css" /><link rel="stylesheet" href="css/responsive-fix.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="preloader"><div class="loader-logo"><div class="loader-ring"></div><p>MSUAS Heritage Explorer</p></div></div>
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand"><div class="nav-logo-wrapper"><div class="nav-logo-icon"><i class="fas fa-university"></i></div><div><span class="nav-title">MSUAS</span><span class="nav-subtitle">Heritage Explorer</span></div></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="heritage.html"><i class="fas fa-landmark"></i> Heritage</a></li>
+      <li><a href="campus.html"><i class="fas fa-map-marked-alt"></i> Campus Tour</a></li>
+      <li><a href="events.html" class="active"><i class="fas fa-calendar-star"></i> Events</a></li>
+      <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+    <div class="nav-actions"><button class="btn-search-toggle" id="searchToggle"><i class="fas fa-search"></i></button><button class="hamburger" id="hamburger"><span></span><span></span><span></span></button></div>
+  </div>
+  <div class="search-bar" id="searchBar"><input type="text" id="searchInput" placeholder="Search events..." /><button id="searchBtn"><i class="fas fa-search"></i></button><div class="search-results" id="searchResults"></div></div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Events</span></div>
+    <h1><i class="fas fa-calendar-star" style="color:var(--gold-bright)"></i> Events & Festivals</h1>
+    <p>Stay up to date with all MSUAS cultural events, academic occasions, and campus activities</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 300px;gap:2.5rem;align-items:start;" class="events-layout">
+      <div>
+        <!-- Filter -->
+        <div class="heritage-filter" style="justify-content:flex-start;margin-bottom:2rem;">
+          <button class="filter-btn active" data-efilter="all">All Events</button>
+          <button class="filter-btn" data-efilter="Cultural">Cultural</button>
+          <button class="filter-btn" data-efilter="Academic">Academic</button>
+          <button class="filter-btn" data-efilter="Sports">Sports</button>
+          <button class="filter-btn" data-efilter="Arts">Arts</button>
+        </div>
+        <!-- Events Grid -->
+        <div class="events-full-grid" id="eventsFullGrid"></div>
+      </div>
+      <!-- Sidebar -->
+      <div>
+        <div class="calendar-widget" style="margin-bottom:1.5rem;">
+          <div class="cal-header">
+            <button class="cal-nav" id="calPrev"><i class="fas fa-chevron-left"></i></button>
+            <span id="calTitle" style="font-weight:700;font-size:0.95rem;"></span>
+            <button class="cal-nav" id="calNext"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+        </div>
+        <!-- Quick Register -->
+        <div style="background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:12px;padding:1.5rem;color:#fff;">
+          <h4 style="margin-bottom:0.75rem;"><i class="fas fa-bell" style="color:var(--gold-bright)"></i> Event Notifications</h4>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.8);margin-bottom:1rem;">Get reminders for upcoming events directly to your email.</p>
+          <form id="eventNotifyForm">
+            <input type="email" id="notifyEmail" placeholder="Your email address" style="width:100%;padding:0.6rem 0.9rem;border-radius:6px;border:1px solid rgba(255,215,0,0.4);background:rgba(255,255,255,0.1);color:#fff;font-size:0.85rem;margin-bottom:0.75rem;" />
+            <button type="submit" class="btn btn-sm btn-gold" style="width:100%;justify-content:center;"><i class="fas fa-bell"></i> Subscribe</button>
+          </form>
+          <p id="notifyMsg" style="font-size:0.8rem;color:var(--gold-bright);margin-top:0.5rem;min-height:1.2rem;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+<footer class="footer"><div class="footer-bottom"><div class="container"><p>&copy; 2025 Manicaland State University of Applied Sciences.</p><p>DSI236 Practical Assignment | Group of Five</p></div></div></footer>
+<script src="js/main.js"></script>
+<script src="js/events.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b5e20"/>
+      <stop offset="100%" stop-color="#4caf50"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8860b"/>
+      <stop offset="100%" stop-color="#ffd700"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#g1)" stroke="#ffd700" stroke-width="4"/>
+  <rect x="70" y="60" width="60" height="50" rx="4" fill="rgba(255,215,0,0.9)"/>
+  <rect x="60" y="108" width="80" height="8" rx="2" fill="rgba(255,215,0,0.9)"/>
+  <rect x="78" y="70" width="8" height="30" rx="2" fill="#1b5e20"/>
+  <rect x="96" y="70" width="8" height="30" rx="2" fill="#1b5e20"/>
+  <rect x="114" y="70" width="8" height="30" rx="2" fill="#1b5e20"/>
+  <text x="100" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="14" fill="#ffd700">MSUAS</text>
+  <text x="100" y="162" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,0.8)">HERITAGE EXPLORER</text>
+</svg>

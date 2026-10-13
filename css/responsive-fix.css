@@ -1,0 +1,8 @@
+/* events layout responsive */
+@media (max-width: 900px) {
+  .events-layout { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 768px) {
+  .mv-grid { grid-template-columns: 1fr !important; }
+  .directions-grid { grid-template-columns: 1fr !important; }
+}

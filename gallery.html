@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | MSUAS Heritage Explorer</title>
+  <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="preloader"><div class="loader-logo"><div class="loader-ring"></div><p>MSUAS Heritage Explorer</p></div></div>
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand"><div class="nav-logo-wrapper"><div class="nav-logo-icon"><i class="fas fa-university"></i></div><div><span class="nav-title">MSUAS</span><span class="nav-subtitle">Heritage Explorer</span></div></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="heritage.html"><i class="fas fa-landmark"></i> Heritage</a></li>
+      <li><a href="campus.html"><i class="fas fa-map-marked-alt"></i> Campus Tour</a></li>
+      <li><a href="events.html"><i class="fas fa-calendar-star"></i> Events</a></li>
+      <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+    <div class="nav-actions"><button class="btn-search-toggle" id="searchToggle"><i class="fas fa-search"></i></button><button class="hamburger" id="hamburger"><span></span><span></span><span></span></button></div>
+  </div>
+  <div class="search-bar" id="searchBar"><input type="text" id="searchInput" placeholder="Search gallery..." /><button id="searchBtn"><i class="fas fa-search"></i></button><div class="search-results" id="searchResults"></div></div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Gallery</span></div>
+    <h1><i class="fas fa-images" style="color:var(--gold-bright)"></i> Photo Gallery</h1>
+    <p>A visual journey through MSUAS campus life, heritage sites, and Manicaland beauty</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- Filter -->
+    <div class="heritage-filter" id="galleryFilter" data-aos="fade-up">
+      <button class="filter-btn active" data-gfilter="all">All Photos</button>
+      <button class="filter-btn" data-gfilter="campus">Campus</button>
+      <button class="filter-btn" data-gfilter="heritage">Heritage</button>
+      <button class="filter-btn" data-gfilter="events">Events</button>
+      <button class="filter-btn" data-gfilter="nature">Nature</button>
+      <button class="filter-btn" data-gfilter="students">Student Life</button>
+    </div>
+    <!-- Gallery Masonry -->
+    <div class="gallery-masonry" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose"><i class="fas fa-times"></i></button>
+  <button class="lightbox-nav prev" id="lbPrev"><i class="fas fa-chevron-left"></i></button>
+  <div class="lightbox-content">
+    <div class="lightbox-inner" id="lbContent"></div>
+  </div>
+  <button class="lightbox-nav next" id="lbNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="lightbox-caption" id="lbCaption"></div>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+<footer class="footer"><div class="footer-bottom"><div class="container"><p>&copy; 2025 Manicaland State University of Applied Sciences.</p><p>DSI236 Practical Assignment | Group of Five</p></div></div></footer>
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>

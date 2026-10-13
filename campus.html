@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Tour | MSUAS Heritage Explorer</title>
+  <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="preloader"><div class="loader-logo"><div class="loader-ring"></div><p>MSUAS Heritage Explorer</p></div></div>
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand"><div class="nav-logo-wrapper"><div class="nav-logo-icon"><i class="fas fa-university"></i></div><div><span class="nav-title">MSUAS</span><span class="nav-subtitle">Heritage Explorer</span></div></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="heritage.html"><i class="fas fa-landmark"></i> Heritage</a></li>
+      <li><a href="campus.html" class="active"><i class="fas fa-map-marked-alt"></i> Campus Tour</a></li>
+      <li><a href="events.html"><i class="fas fa-calendar-star"></i> Events</a></li>
+      <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+    <div class="nav-actions"><button class="btn-search-toggle" id="searchToggle"><i class="fas fa-search"></i></button><button class="hamburger" id="hamburger"><span></span><span></span><span></span></button></div>
+  </div>
+  <div class="search-bar" id="searchBar"><input type="text" id="searchInput" placeholder="Search campus facilities..." /><button id="searchBtn"><i class="fas fa-search"></i></button><div class="search-results" id="searchResults"></div></div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Campus Tour</span></div>
+    <h1><i class="fas fa-map-marked-alt" style="color:var(--gold-bright)"></i> Campus Tour</h1>
+    <p>Navigate every corner of MSUAS with our interactive campus guide</p>
+  </div>
+</div>
+
+<!-- CAMPUS TABS -->
+<section class="section">
+  <div class="container">
+    <div class="campus-tabs">
+      <button class="campus-tab active" data-tab="map">Interactive Map</button>
+      <button class="campus-tab" data-tab="facilities" id="facilities">Facilities</button>
+      <button class="campus-tab" data-tab="virtual">Virtual Tour</button>
+      <button class="campus-tab" data-tab="directions">Getting Here</button>
+    </div>
+
+    <!-- MAP TAB -->
+    <div class="campus-tab-content active" id="tab-map">
+      <div class="full-map-container">
+        <div class="full-map-inner" id="fullMap">
+          <!-- Buildings populated by JS -->
+          <div class="map-controls">
+            <button class="map-ctrl-btn" id="mapZoomIn" title="Zoom In"><i class="fas fa-plus"></i></button>
+            <button class="map-ctrl-btn" id="mapZoomOut" title="Zoom Out"><i class="fas fa-minus"></i></button>
+            <button class="map-ctrl-btn" id="mapReset" title="Reset"><i class="fas fa-redo"></i></button>
+          </div>
+          <div class="map-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#2d7d32"></div> Academic</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#b8860b"></div> Services</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#1565c0"></div> Residential</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#c62828"></div> Sports</div>
+          </div>
+        </div>
+      </div>
+      <div id="buildingInfo" style="display:none;background:var(--white);border-radius:12px;padding:1.5rem;margin-top:1rem;box-shadow:var(--shadow-md);border-left:4px solid var(--green-mid);">
+        <h3 id="bldName"></h3><p id="bldDesc"></p>
+        <div id="bldMeta" style="display:flex;gap:1.5rem;margin-top:0.75rem;flex-wrap:wrap;font-size:0.85rem;color:var(--gray-600)"></div>
+      </div>
+    </div>
+
+    <!-- FACILITIES TAB -->
+    <div class="campus-tab-content" id="tab-facilities">
+      <div class="section-header"><span class="section-tag">Campus Facilities</span><h2>All Campus Facilities</h2></div>
+      <div class="facility-grid" id="facilityGrid"></div>
+    </div>
+
+    <!-- VIRTUAL TAB -->
+    <div class="campus-tab-content" id="tab-virtual">
+      <div class="vr-container">
+        <div class="vr-icon"><i class="fas fa-vr-cardboard"></i></div>
+        <h2 style="color:#fff;font-family:var(--font-display);margin-bottom:0.75rem;">360° Virtual Campus Tour</h2>
+        <p style="color:rgba(255,255,255,0.8);max-width:600px;margin:0 auto 2rem;">
+          Select a location below to start your virtual tour. Use your mouse to look around, or view on a VR headset for full immersion.
+        </p>
+        <div class="vr-spots" id="vrSpots"></div>
+        <div id="vrViewer" style="margin-top:2rem;background:rgba(0,0,0,0.4);border-radius:12px;min-height:280px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);font-size:0.9rem;">
+          <div style="text-align:center"><i class="fas fa-mouse-pointer" style="font-size:2.5rem;color:var(--gold-bright);display:block;margin-bottom:1rem;"></i>Select a location above to begin</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIRECTIONS TAB -->
+    <div class="campus-tab-content" id="tab-directions">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="directions-grid">
+        <div>
+          <div class="section-header" style="text-align:left"><span class="section-tag">Getting Here</span><h2>Find MSUAS</h2></div>
+          <div id="directionsInfo"></div>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--green-pale),var(--gold-pale));border-radius:var(--radius-lg);height:350px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;box-shadow:var(--shadow-md);">
+          <i class="fas fa-map-marked-alt" style="font-size:4rem;color:var(--green-mid)"></i>
+          <p style="color:var(--green-dark);font-weight:600;">MSUAS Main Campus</p>
+          <p style="font-size:0.85rem;color:var(--gray-600)">Mutare, Manicaland, Zimbabwe</p>
+          <a href="https://maps.google.com/?q=Mutare+Zimbabwe" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+<footer class="footer"><div class="footer-bottom"><div class="container"><p>&copy; 2025 Manicaland State University of Applied Sciences.</p><p>DSI236 Practical Assignment | Group of Five</p></div></div></footer>
+
+<script src="js/main.js"></script>
+<script src="js/campus.js"></script>
+</body>
+</html>
